@@ -7,21 +7,20 @@ import FormRowVertical from "../../ui/FormRowVertical";
 import useLogin from "./useLogin";
 
 function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("tyresz@tyresz.com");
+  const [password, setPassword] = useState("pass0224");
   const { login, isLoading } = useLogin();
 
   function handleSubmit(e) {
     e.preventDefault();
     if (!email || !password) return;
-    // addidng comment
 
     login(
       { email, password },
       {
         onSettled: () => {
-          setEmail("tyresz@tyresz.com");
-          setPassword("pass0224");
+          setEmail("");
+          setPassword("");
         },
       }
     );
